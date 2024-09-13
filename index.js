@@ -18,7 +18,7 @@ app.post("/login", async (req, res) => {
   try {
     const { login, password } = req.body;
     const sql =
-      "INSERT INTO users(login, password, createdAt) VALUES($1, $2, '12.12.1212') RETURNING *";
+      "INSERT INTO users(login, password, createdAt, updatedAt) VALUES($1, $2, '12.12.1212', '12.12.1212') RETURNING *";
     const { rows } = await postgre.query(sql, [login, password]);
     res.json({ msg: "OK", user: rows[0] });
   } catch (error) {
