@@ -2,11 +2,13 @@ const express = require("express");
 const cors = require("cors");
 const app = express();
 
+const postgre = require("./databse");
+
 app.use(
   cors({
-    origin: "http://localhost:3000", // Allow only specific origin
+    origin: "http://localhost:3000",
     methods: "GET,POST,PUT,DELETE",
-    credentials: true, // Enable credentials (cookies, HTTP auth)
+    credentials: true,
   })
 );
 
