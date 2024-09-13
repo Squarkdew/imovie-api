@@ -4,12 +4,11 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:3000",
+    origin: "http://localhost:3000", // Allow only specific origin
     methods: "GET,POST,PUT,DELETE",
-    allowedHeaders: "Content-Type, Authorization",
+    credentials: true, // Enable credentials (cookies, HTTP auth)
   })
 );
-app.options("/login", cors());
 
 app.use(express.json());
 
