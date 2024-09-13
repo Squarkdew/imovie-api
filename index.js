@@ -7,7 +7,7 @@ require("dotenv").config();
 app.use(express.json());
 app.use(cors({ credentials: true, origin: "http://localhost:3000" }));
 
-const postgre = require("../database.js");
+const postgre = require("./databse");
 
 app.post("/login", async (req, res) => {
   try {
