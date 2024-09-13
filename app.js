@@ -1,12 +1,14 @@
-const { Pool } = require("pg");
+const express = require("express");
+const app = express();
 
-const pool = new Pool({
-  connectionString: process.env.POSTGRES_URL,
-});
+require("dotenv").config();
 
-pool.connect((err) => {
-  if (err) throw err;
-  console.log("Connect to PostgreSQL successfully!");
-});
+app.use(express.json());
 
-module.exports = pool;
+const bookRouter = require("./routes/avatarRoute");
+
+app.use("/api/v1/books", bookRouter);
+
+app.listen(process.env.PORT, () =>
+  console.log("Server is running on port 5000")
+);
