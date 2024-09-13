@@ -4,9 +4,12 @@ const app = express();
 
 app.use(
   cors({
-    origin: "http://localhost:3000", // Разрешите запросы с вашего фронтенда
+    origin: "http://localhost:3000",
+    methods: "GET,POST,PUT,DELETE",
+    allowedHeaders: "Content-Type, Authorization",
   })
 );
+app.options("/login", cors());
 
 app.use(express.json());
 
