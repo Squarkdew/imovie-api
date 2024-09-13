@@ -2,6 +2,12 @@ require("dotenv").config();
 const express = require("express");
 const cors = require("cors");
 
+const { Pool } = require("pg");
+
+const pool = new Pool({
+  connectionString: process.env.POSTGRES_URL,
+});
+
 const { movies, persons, comments } = require("./db/models");
 
 const app = express();
