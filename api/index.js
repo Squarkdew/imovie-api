@@ -5,7 +5,7 @@ require("dotenv").config();
 
 app.use(express.json());
 
-const bookRouter = require("./routes/avatarRoute");
+const bookRouter = require("../routes/avatarRoute");
 
 app.use("/api/v1/books", bookRouter);
 
