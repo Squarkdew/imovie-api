@@ -6,7 +6,7 @@ const postgre = require("./databse");
 
 app.use(
   cors({
-    origin: "http://localhost:3001",
+    origin: "https://66e49bcb7537c4750b041067--moonlit-yeot-805f5a.netlify.app",
     methods: "GET,POST,PUT,DELETE",
     credentials: true,
   })
